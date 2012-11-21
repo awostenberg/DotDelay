@@ -1,0 +1,27 @@
+
+Unhandled Exception: System.IO.DirectoryNotFoundException: Directory "/Users/alanwostenberg/Desktop/John/school/Science/Fair/DotDelay/DotDelay/bin/Debug/DotDelay.app/Contents/Resources" not found.
+at System.IO.Directory.SetCurrentDirectory (string) <0x000eb>
+at Microsoft.Xna.Framework.MacGamePlatform..ctor (Microsoft.Xna.Framework.Game) <0x0006f>
+at Microsoft.Xna.Framework.GamePlatform.Create (Microsoft.Xna.Framework.Game) <0x00027>
+at Microsoft.Xna.Framework.Game..ctor () <0x0051f>
+at DotDelay.Lib.MainGame..ctor () <0x0002f>
+at DotDelay.Host.AppDelegate.FinishedLaunching (MonoMac.Foundation.NSObject) <0x00023>
+at (wrapper dynamic-method) object.[DotDelay.Host.AppDelegate.Void FinishedLaunching(MonoMac.Foundation.NSObject)] (MonoMac.Foundation.NSObject,MonoMac.ObjCRuntime.Selector,MonoMac.Foundation.NSObject) <0x00033>
+at (wrapper native-to-managed) object.[DotDelay.Host.AppDelegate.Void FinishedLaunching(MonoMac.Foundation.NSObject)] (MonoMac.Foundation.NSObject,MonoMac.ObjCRuntime.Selector,MonoMac.Foundation.NSObject) <0x000fb>
+at (wrapper managed-to-native) MonoMac.AppKit.NSApplication.NSApplicationMain (int,string[]) <0x00003>
+at MonoMac.AppKit.NSApplication.Main (string[]) <0x0003f>
+at DotDelay.Host.Program.Main (string[]) <0x0008b>
+
+[ERROR] FATAL UNHANDLED EXCEPTION: System.IO.DirectoryNotFoundException: Directory "/Users/alanwostenberg/Desktop/John/school/Science/Fair/DotDelay/DotDelay/bin/Debug/DotDelay.app/Contents/Resources" not found.
+at System.IO.Directory.SetCurrentDirectory (string) <0x000eb>
+at Microsoft.Xna.Framework.MacGamePlatform..ctor (Microsoft.Xna.Framework.Game) <0x0006f>
+at Microsoft.Xna.Framework.GamePlatform.Create (Microsoft.Xna.Framework.Game) <0x00027>
+at Microsoft.Xna.Framework.Game..ctor () <0x0051f>
+at DotDelay.Lib.MainGame..ctor () <0x0002f>
+at DotDelay.Host.AppDelegate.FinishedLaunching (MonoMac.Foundation.NSObject) <0x00023>
+at (wrapper dynamic-method) object.[DotDelay.Host.AppDelegate.Void FinishedLaunching(MonoMac.Foundation.NSObject)] (MonoMac.Foundation.NSObject,MonoMac.ObjCRuntime.Selector,MonoMac.Foundation.NSObject) <0x00033>
+at (wrapper native-to-managed) object.[DotDelay.Host.AppDelegate.Void FinishedLaunching(MonoMac.Foundation.NSObject)] (MonoMac.Foundation.NSObject,MonoMac.ObjCRuntime.Selector,MonoMac.Foundation.NSObject) <0x000fb>
+at (wrapper managed-to-native) MonoMac.AppKit.NSApplication.NSApplicationMain (int,string[]) <0x00003>
+at MonoMac.AppKit.NSApplication.Main (string[]) <0x0003f>
+at DotDelay.Host.Program.Main (string[]) <0x0008b>
+

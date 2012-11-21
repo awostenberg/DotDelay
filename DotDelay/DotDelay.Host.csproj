@@ -93,9 +93,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
+    <Folder Include="Media\" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Content\dot.png" />
+    <BundleResource Include="Media\dot.png" />
   </ItemGroup>
 </Project>

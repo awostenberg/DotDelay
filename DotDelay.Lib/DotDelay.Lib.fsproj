@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="MainGame.fs" />
+    <Compile Include="Flash.fs" />
+    <Compile Include="GameObject.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
 </Project>

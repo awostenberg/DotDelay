@@ -1,11 +1,26 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DotDelay.Lib/MainGame.fs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DotDelay.Lib/Flash.fs">
     <Files>
-      <File FileName="DotDelay/Main.cs" Line="8" Column="20" />
-      <File FileName="DotDelay.Lib/MainGame.fs" Line="9" Column="10" />
-      <File FileName="DotDelay/DotDelayGame.cs.old" Line="33" Column="31" />
+      <File FileName="DotDelay.Lib/GameObject.fs" Line="14" Column="68" />
+      <File FileName="DotDelay.Lib/Flash.fs" Line="5" Column="27" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="DotDelay.Lib" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

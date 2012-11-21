@@ -9,6 +9,14 @@
     <OutputType>Library</OutputType>
     <RootNamespace>DotDelay.Lib</RootNamespace>
     <AssemblyName>DotDelay.Lib</AssemblyName>
+    <BuildOrder>
+      <BuildOrder>
+        <String>AssemblyInfo.fs</String>
+        <String>MainGame.fs</String>
+        <String>GameObject.fs</String>
+        <String>Flash.fs</String>
+      </BuildOrder>
+    </BuildOrder>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

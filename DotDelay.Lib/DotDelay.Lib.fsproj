@@ -12,9 +12,9 @@
     <BuildOrder>
       <BuildOrder>
         <String>AssemblyInfo.fs</String>
-        <String>MainGame.fs</String>
         <String>GameObject.fs</String>
         <String>Flash.fs</String>
+        <String>MainGame.fs</String>
       </BuildOrder>
     </BuildOrder>
   </PropertyGroup>

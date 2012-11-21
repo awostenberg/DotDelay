@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9164B8C2-4DB2-492A-BB33-A9B4D1FDEBBB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DotDelay.Lib</RootNamespace>
+    <AssemblyName>DotDelay.Lib</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>False</ConsolePause>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <Tailcalls>true</Tailcalls>
+    <ConsolePause>False</ConsolePause>
+    <PlatformTarget />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="Lidgren.Network">
+      <HintPath>..\..\..\..\..\..\..\..\..\Applications\MonoDevelop.app\Contents\MacOS\lib\monodevelop\AddIns\MonoDevelop.MonoGame\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.MacOS">
+      <HintPath>..\..\..\..\..\..\..\..\..\Applications\MonoDevelop.app\Contents\MacOS\lib\monodevelop\AddIns\MonoDevelop.MonoGame\MonoGame.Framework.MacOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMac, Version=0.0.0.0, Culture=neutral">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="MainGame.fs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
+</Project>

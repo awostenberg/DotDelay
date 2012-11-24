@@ -4,12 +4,12 @@ open Microsoft.Xna.Framework
 type MainGame() as this =
   inherit Game()
   let _graphics = new GraphicsDeviceManager(this)
-  let flash = new Flash(this, new Vector2(100.0f, 100.0f))
+  let flash = new Flash(this, new Vector2(0.0f, 0.0f))
   // MUST come after the let binding, or the let binding is excecuted after the do, and the do is not executed in a fully initialized object.
   do
     this.Content.RootDirectory <- "Content"
     this.graphics.IsFullScreen <- false
-    this.setSize(new Vector2(1028.0f, 720.0f))
+    //this.setSize(new Vector2(1028.0f, 720.0f))
     this.IsMouseVisible <- true
     this.Window.Title <- "DotDelay Experiment"
   member this.setSize(size : Vector2) =

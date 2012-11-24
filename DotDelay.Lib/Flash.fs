@@ -14,5 +14,6 @@ type Flash(game, pos : Vector2) =
     image <- game.Content.Load<Texture2D>("dot")
   override this.Draw(gameTime) =
     spriteBatch.Begin()
-    spriteBatch.Draw(image, position, Color.White)
+    spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White)
+    //spriteBatch.Draw(image, new Vector2(0.0f, 0.0f), Color.White)
     spriteBatch.End()

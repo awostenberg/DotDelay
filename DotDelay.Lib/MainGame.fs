@@ -9,7 +9,7 @@ type MainGame() as this =
   do
     this.Content.RootDirectory <- "Content"
     this.graphics.IsFullScreen <- false
-    //this.setSize(new Vector2(1028.0f, 720.0f))
+    this.setSize(new Vector2(1028.0f, 720.0f))
     this.IsMouseVisible <- true
     this.Window.Title <- "DotDelay Experiment"
   member this.setSize(size : Vector2) =

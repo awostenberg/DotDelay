@@ -3,6 +3,7 @@ open Microsoft.Xna.Framework
 open Microsoft.Xna.Framework.Content
 open Microsoft.Xna.Framework.Graphics
 
+[<AllowNullLiteral>]
 type Flash(game, pos : Vector2) =
   inherit GameObject(game)
   

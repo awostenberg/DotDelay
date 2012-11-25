@@ -1,6 +1,7 @@
 namespace DotDelay.Lib
 open Microsoft.Xna.Framework
 
+[<AllowNullLiteral>]
 [<AbstractClass>]
 type GameObject(game : Game) =
   member this.game = game

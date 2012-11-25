@@ -7,7 +7,7 @@ open Microsoft.Xna.Framework.Graphics
 type Flash(game, pos : Vector2) =
   inherit GameObject(game)
   
-  static let flashFrames = 25
+  static let flashFrames = 50
   
   let mutable image : Texture2D = null
   let mutable spriteBatch = null
@@ -25,6 +25,6 @@ type Flash(game, pos : Vector2) =
   
   override this.Draw(gameTime) =
     spriteBatch.Begin()
-    let transparency = ((flashFrames |> float32) - (age |> float32)) / (flashFrames |> float32)//(flashFrames |> float32) / (age |> float32)
+    let transparency = (((flashFrames |> float32) - (age |> float32)) / (flashFrames |> float32)) ** 3.0f//(flashFrames |> float32) / (age |> float32)
     spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White * transparency)
     spriteBatch.End()

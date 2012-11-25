@@ -7,9 +7,7 @@ type Flash(game, pos : Vector2) =
   inherit GameObject(game)
   
   let mutable image : Texture2D = null
-  
   let mutable spriteBatch = null
-  
   let position = pos
   
   override this.Initialize() =

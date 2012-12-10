@@ -7,12 +7,13 @@ open Microsoft.Xna.Framework.Graphics
 type Flash(game, pos : Vector2) =
   inherit GameObject(game)
   
-  static let flashFrames = 50
+  // Takes 1 second to go from opaque to transparent
+  static let flashTime = 1000.0
   
   let mutable image : Texture2D = null
   let mutable spriteBatch = null
   let position = pos
-  let mutable age = 0
+  let mutable age = 0.0
   
   override this.Initialize() =
     spriteBatch <- new SpriteBatch(game.GraphicsDevice)
@@ -21,10 +22,10 @@ type Flash(game, pos : Vector2) =
     image <- game.Content.Load<Texture2D>("dot")
   
   override this.Update(gameTime) =
-    if age < flashFrames then age <- age + 1
+    if age < flashTime then age <- age + gameTime.ElapsedGameTime.TotalMilliseconds
   
   override this.Draw(gameTime) =
     spriteBatch.Begin()
-    let transparency = (((flashFrames |> float32) - (age |> float32)) / (flashFrames |> float32)) ** 3.0f//(flashFrames |> float32) / (age |> float32)
-    spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White * transparency)
+    let transparency = ((flashTime - age) / flashTime) ** 3.0//(flashFrames |> float32) / (age |> float32)
+    spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White * (transparency |> float32))
     spriteBatch.End()

@@ -11,11 +11,13 @@ type MainGame() as this =
   let mutable oldState = Keyboard.GetState PlayerIndex.One
   let mutable flash : Flash = null
   
-  // MUST come after the let binding, or the let binding is excecuted after the do, and the do is not executed in a fully initialized object.
+  // MUST come after the let binding, or the let binding is executed after the do, and the do is not executed in a fully initialized object.
   do
+    // So we can specify things in milliseconds
+    this.IsFixedTimeStep <- false
     this.Content.RootDirectory <- "Content"
-    this.graphics.IsFullScreen <- false
     this.setSize(new Vector2(1028.0f, 720.0f))
+    this.graphics.IsFullScreen <- false
     this.IsMouseVisible <- true
     this.Window.Title <- "DotDelay Experiment"
   

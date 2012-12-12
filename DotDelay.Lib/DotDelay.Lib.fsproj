@@ -14,6 +14,7 @@
         <String>AssemblyInfo.fs</String>
         <String>GameObject.fs</String>
         <String>Flash.fs</String>
+        <String>FlashTracker.fs</String>
         <String>MainGame.fs</String>
       </BuildOrder>
     </BuildOrder>
@@ -57,6 +58,7 @@
     <Compile Include="MainGame.fs" />
     <Compile Include="Flash.fs" />
     <Compile Include="GameObject.fs" />
+    <Compile Include="FlashTracker.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft F#\v4.0\Microsoft.FSharp.Targets" />
 </Project>

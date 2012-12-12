@@ -13,7 +13,9 @@ type FlashTracker(game, pos : Vector2) =
     flash.LoadContent()
   
   override this.Update(gameTime) =
-    if not (flash = null) then flash.Update(gameTime)
+    if not (flash = null) then
+      flash.Update(gameTime)
+      if flash.IsDone() then flash <- null
   
   override this.Draw(gameTime) =
     if not (flash = null) then flash.Draw(gameTime)

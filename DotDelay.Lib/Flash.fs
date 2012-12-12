@@ -21,10 +21,10 @@ type Flash(game, pos : Vector2) =
   override this.LoadContent() =
     image <- game.Content.Load<Texture2D>("dot")
   
-  member this.IsDone(age) = age <= flashTime
+  member this.IsDone() = age > flashTime
   
   override this.Update(gameTime) =
-    if this.IsDone(age) then age <- age + gameTime.ElapsedGameTime.TotalMilliseconds
+    if not (this.IsDone()) then age <- age + gameTime.ElapsedGameTime.TotalMilliseconds
   
   override this.Draw(gameTime) =
     spriteBatch.Begin()

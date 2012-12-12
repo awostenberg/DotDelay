@@ -9,7 +9,7 @@ type MainGame() as this =
   let _graphics = new GraphicsDeviceManager(this)
   // That's odd... apparently you need to use a PlayerIndex to get KEYBOARD input...?
   let mutable oldState = Keyboard.GetState PlayerIndex.One
-  let mutable flash : Flash = null
+  let mutable flashTracker : FlashTracker = null
   
   // MUST come after the let binding, or the let binding is executed after the do, and the do is not executed in a fully initialized object.
   do
@@ -45,27 +45,21 @@ type MainGame() as this =
   
   member this.graphics with get() : GraphicsDeviceManager = _graphics
   
-  member this.StartFlash() =
-    flash <- new Flash(this, new Vector2(this.CenterWidth |> float32, this.CenterHeight |> float32))
-    flash.Initialize()
-    flash.LoadContent()
-  
   override this.Initialize() =
-    if not (flash = null) then flash.Initialize()
+    flashTracker <- new FlashTracker(this, new Vector2(this.CenterWidth |> float32, this.CenterHeight |> float32))
     base.Initialize()
   
   override this.LoadContent() =
-    if not (flash = null) then flash.LoadContent()
     base.LoadContent()
-    
+  
   override this.Update(gameTime) =
     let currentState = Keyboard.GetState PlayerIndex.One
-    if currentState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) then this.StartFlash()
-    if not (flash = null) then flash.Update(gameTime)
+    if currentState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) then flashTracker.StartFlash()
+    flashTracker.Update(gameTime)
     oldState <- currentState
     base.Update(gameTime)
   
   override this.Draw(gameTime) =
     this.graphics.GraphicsDevice.Clear(Color.CornflowerBlue)
-    if not (flash = null) then flash.Draw(gameTime)
+    flashTracker.Draw(gameTime)
     base.Draw(gameTime)

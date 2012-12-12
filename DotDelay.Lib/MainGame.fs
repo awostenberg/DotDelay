@@ -48,7 +48,7 @@ type MainGame() as this =
   member this.graphics with get() : GraphicsDeviceManager = _graphics
   
   override this.Initialize() =
-    flashTracker <- new FlashTracker(this, this.CenterDimensions)
+    flashTracker <- new FlashTracker(this, this.CenterDimensions, [0.0; 10.0; 20.0; 30.0; 40.0; 50.0; 60.0; 0.0])
     base.Initialize()
   
   override this.LoadContent() =
@@ -56,7 +56,7 @@ type MainGame() as this =
   
   override this.Update(gameTime) =
     let currentState = Keyboard.GetState PlayerIndex.One
-    if currentState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) then flashTracker.StartFlash()
+    if currentState.IsKeyDown(Keys.Space) && oldState.IsKeyUp(Keys.Space) then flashTracker.Flash()
     flashTracker.Update(gameTime)
     oldState <- currentState
     base.Update(gameTime)

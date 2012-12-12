@@ -21,11 +21,13 @@ type Flash(game, pos : Vector2) =
   override this.LoadContent() =
     image <- game.Content.Load<Texture2D>("dot")
   
+  member this.IsDone(age) = age <= flashTime
+  
   override this.Update(gameTime) =
-    if age < flashTime then age <- age + gameTime.ElapsedGameTime.TotalMilliseconds
+    if this.IsDone(age) then age <- age + gameTime.ElapsedGameTime.TotalMilliseconds
   
   override this.Draw(gameTime) =
     spriteBatch.Begin()
-    let transparency = ((flashTime - age) / flashTime) ** 3.0//(flashFrames |> float32) / (age |> float32)
+    let transparency = ((flashTime - age) / flashTime) ** 3.0
     spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White * (transparency |> float32))
     spriteBatch.End()

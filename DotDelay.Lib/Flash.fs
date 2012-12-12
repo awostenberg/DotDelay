@@ -19,7 +19,7 @@ type Flash(game, pos : Vector2) =
     spriteBatch <- new SpriteBatch(game.GraphicsDevice)
   
   override this.LoadContent() =
-    image <- game.Content.Load<Texture2D>("dot")
+    image <- game.Content.Load<Texture2D>("Media/dot")
   
   member this.IsDone() = age > flashTime
   

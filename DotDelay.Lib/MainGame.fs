@@ -15,7 +15,7 @@ type MainGame() as this =
   do
     // So we can specify things in milliseconds
     this.IsFixedTimeStep <- false
-    this.Content.RootDirectory <- "Content"
+    this.Content.RootDirectory <- "../Resources"
     this.setSize(new Vector2(1028.0f, 720.0f))
     this.graphics.IsFullScreen <- false
     this.IsMouseVisible <- true
@@ -48,7 +48,7 @@ type MainGame() as this =
   member this.graphics with get() : GraphicsDeviceManager = _graphics
   
   override this.Initialize() =
-    flashTracker <- new FlashTracker(this, this.CenterDimensions, [0.0; 10.0; 20.0; 30.0; 40.0; 50.0; 60.0; 0.0])
+    flashTracker <- new FlashTracker(this, this.CenterDimensions, [for i in 0..7 -> i % 7 * 25 |> float])
     base.Initialize()
   
   override this.LoadContent() =

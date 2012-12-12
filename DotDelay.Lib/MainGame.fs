@@ -36,6 +36,8 @@ type MainGame() as this =
   
   member this.CenterHeight with get() = this.Height / 2
   
+  member this.CenterDimensions with get() = new Vector2(this.CenterWidth |> float32, this.CenterHeight |> float32)
+  
   member this.tryApplyChanges() = try this.graphics.ApplyChanges() with :? System.NullReferenceException -> ()
   
   member this.setSize(size : Vector2) =
@@ -46,7 +48,7 @@ type MainGame() as this =
   member this.graphics with get() : GraphicsDeviceManager = _graphics
   
   override this.Initialize() =
-    flashTracker <- new FlashTracker(this, new Vector2(this.CenterWidth |> float32, this.CenterHeight |> float32))
+    flashTracker <- new FlashTracker(this, this.CenterDimensions)
     base.Initialize()
   
   override this.LoadContent() =

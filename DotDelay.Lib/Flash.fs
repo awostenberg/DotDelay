@@ -28,6 +28,7 @@ type Flash(game, pos : Vector2) =
   
   override this.Draw(gameTime) =
     spriteBatch.Begin()
+    let center = new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32))
     let transparency = ((flashTime - age) / flashTime) ** 3.0
-    spriteBatch.Draw(image, new Vector2(position.X - (image.Width / 2 |> float32), position.Y - (image.Height / 2 |> float32)), Color.White * (transparency |> float32))
+    spriteBatch.Draw(image, center, Color.White * (transparency |> float32))
     spriteBatch.End()

@@ -20,17 +20,20 @@ type FlashTracker(game, pos : Vector2, delayTimes : float list) =
     flash.LoadContent()
   
   member this.Flash() =
-    itr <- itr + 1
     delaying <- true
     stopWatch.Start()
   
+  member this.CurrentDelay with get() = delayTimes.Item(itr)
+  
   override this.Update(gameTime) =
     if delaying then
-      if stopWatch.Elapsed.TotalMilliseconds >= 500.0 then
-        this.BasicFlash()
-        stopWatch.Stop()
-        stopWatch.Reset()
-        delaying <- false
+      if itr <= (delayTimes.Length - 1) then
+        if stopWatch.Elapsed.TotalMilliseconds >= this.CurrentDelay then
+          this.BasicFlash()
+          stopWatch.Stop()
+          stopWatch.Reset()
+          delaying <- false
+          itr <- itr + 1
     if not (flash = null) then
       flash.Update(gameTime)
       if flash.IsDone() then flash <- null

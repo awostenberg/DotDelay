@@ -48,8 +48,8 @@ type MainGame() as this =
   member this.graphics with get() : GraphicsDeviceManager = _graphics
   
   override this.Initialize() =
-    let transition min max steps = [for factor in (min)..(max / (steps - 1 |> float))..(max) -> factor]
-    flashTracker <- new FlashTracker(this, this.CenterDimensions, transition 0.0 150.0 7 @ [0.0])//[for fac in (0.0)..(0.1)..(1.0) -> fac * 150.0] @ [0.0])
+    let transition min max steps = [min..(max / (steps - 1 |> float))..max]
+    flashTracker <- new FlashTracker(this, this.CenterDimensions, ransition 0.0 150.0 7 @ [0.0])
     base.Initialize()
   
   override this.LoadContent() =

@@ -49,7 +49,7 @@ type MainGame() as this =
   
   override this.Initialize() =
     let transition min max steps = [min..(max / (steps - 1 |> float))..max]
-    flashTracker <- new FlashTracker(this, this.CenterDimensions, ransition 0.0 150.0 7 @ [0.0])
+    flashTracker <- new FlashTracker(this, this.CenterDimensions, transition 0.0 200.0 12 @ [0.0])
     base.Initialize()
   
   override this.LoadContent() =
